@@ -48,38 +48,38 @@ return the native array
 
 get the item in index given
 
-# map()
-# filter 
+# map(cb)
+# filter(cb)
 alias to native one
-# forEach 
+# forEach(cb)
 alias to native one
-# pop
+# pop()
 alias to native one 
-# shift
+# shift()
 alias to native one
-# slice
+# slice(number, number)
 alias to native one
-# toString
+# toString()
 alias to native one
-# sort
+# sort(cb)
 alias to native one
-# join
+# join(string)
 alias to native one
-# find
+# find(cb)
 alias to native one
-# findIndex
+# findIndex(cb)
 alias to native one
-# indexOf
+# indexOf(object)
 alias to native one
-# lastIndexOf
+# lastIndexOf(object)
 alias to native one
-# reduce
+# reduce(cb, object)
 alias to native one
-# reduceRight
+# reduceRight(cb, object)
 alias to native one
-# reverse
+# reverse()
 alias to native one
-# valueOf
+# valueOf()
 alias to native one
 
 

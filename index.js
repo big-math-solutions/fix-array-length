@@ -12,6 +12,11 @@ const fixList = function(len = 0) {
 
     this.pull = this._array.pop;
 
+    this.concat = (...arg) => {
+        this._array = this._array.concat.apply(this._array, arg).slice(-this._len);
+        return this;
+    };
+
     this.from = (_array) => {
         const array = Array.isArray(_array) ? _array : [ _array ];
         this._array = array.slice(0, len);

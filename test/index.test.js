@@ -11,7 +11,7 @@ describe('test to list with fix length', () => {
         }
     });
 
-    it('should fix the length', () => {
+    it('should fix the length in push', () => {
         list.push(0);
         list.push(1);
         list.push(2);
@@ -19,7 +19,7 @@ describe('test to list with fix length', () => {
         assert.deepStrictEqual(list._array, [ 1, 2 ]);
     });
 
-    it('should fix the length', () => {
+    it('should fix the length in unshift', () => {
         list.unshift(2);
         list.unshift(4);
         list.unshift(5);
@@ -27,8 +27,14 @@ describe('test to list with fix length', () => {
         assert.deepStrictEqual(list._array, [ 5, 4 ]);
     });
 
-    it('should fix the length', () => assert(list.get(1) === 4));
-    it('should fix the length', () => {
+    it('should fix the length in concat', () => {
+        list.concat([ 1, 2, 3, 4, 4, 5, 6, 7, 8 ]);
+        assert(list._array.length === 2);
+        assert.deepStrictEqual(list._array, [ 7, 8 ]);
+    });
+
+    it('should return the element with get', () => assert(list.get(1) === 8));
+    it('should set the element with set method', () => {
         list.set(1, 0);
         assert(list.get(1, 0) === 0);
     });
