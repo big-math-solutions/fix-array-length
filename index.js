@@ -34,6 +34,7 @@ const fixList = function(len = 0) {
         if (i < this._len) this._array[i] = item;
         return this;
     };
+    this.getList = this._array.valueOf;
     this.slice = this._array.slice;
     this.toString = this._array.toString;
     this.sort = this._array.sort;

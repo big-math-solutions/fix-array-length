@@ -41,6 +41,9 @@ build the list from array given
 
 set the value fo list in index with item given
 
+# getList
+
+return the native array
 # get(index)
 
 get the item in index given
