@@ -19,7 +19,21 @@ describe('test to list with fix length', () => {
         assert.deepStrictEqual(list._array, [ 1, 2 ]);
     });
 
+    it('should fix the length in push recursive', () => {
+        list.push(0, 1, 2, 3, 4);
+        assert(list._array.length === 2);
+        assert.deepStrictEqual(list._array, [ 3, 4 ]);
+    });
+
     it('should fix the length in unshift', () => {
+        list.unshift(2);
+        list.unshift(4);
+        list.unshift(5);
+        assert(list._array.length === 2);
+        assert.deepStrictEqual(list._array, [ 5, 4 ]);
+    });
+
+    it('should fix the length in unshift recursive', () => {
         list.unshift(2);
         list.unshift(4);
         list.unshift(5);

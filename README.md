@@ -1,5 +1,6 @@
 # fix-array-length
 list or array with fix length, the loop is iterated to maintain the length of array.
+node > 6 is required.
 # install 
 
 ```bash
@@ -17,13 +18,21 @@ list.push(2);
 assert(list._array.length === 2);
 assert.deepStrictEqual(list._array, [ 1, 2 ]);
 
+ list.push(0, 1, 2, 3, 4);
+assert(list._array.length === 2);
+assert.deepStrictEqual(list._array, [ 3, 4 ]);
+
 list.unshift(2);
 list.unshift(4);
 list.unshift(5);
 assert(list._array.length === 2);
 assert.deepStrictEqual(list._array, [ 5, 4 ]);
+
+list.concat([ 1, 2, 3, 4, 4, 5, 6, 7, 8 ]);
+assert(list._array.length === 2);
+assert.deepStrictEqual(list._array, [ 7, 8 ])
 ```
-# push(item)
+# push(item[,...])
 
 remove elements from init to maintain the length of array.
 
@@ -33,6 +42,9 @@ remove elements from end to maintain the length of array.
 
 # pull()
 alias to pop
+
+# concat(array1[,array2, array3...])
+concar the array to current list
 
 # from(array)
 build the list from array given

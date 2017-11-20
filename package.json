@@ -1,6 +1,6 @@
 {
   "name": "fix-array-length",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "fix, length, array, list, unmutable",
   "main": "index.js",
   "directories": {
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/big-math-solutions/fix-array-length/issues"
   },
-  "homepage": "https://github.com/big-math-solutions/fix-array-length#readme"
+  "homepage": "https://github.com/big-math-solutions/fix-array-length#readme",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
 }

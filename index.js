@@ -2,18 +2,26 @@ const fixList = function(len = 0) {
     if (!(this instanceof fixList)) return new fixList(len);
     this._len = len;
     this._array = [];
-    this.push = (item) => {
-        if (this._array.length < this._len) return this._array.push(item);
+    this.push = (...items) => {
+        const length = this._array.length + items.length;
+        if (length <= this._len) return this._array.push(...items);
 
-        this._array.shift();
+        for(let i = 0; i < length - this._len; i++) this._array.shift();
 
-        return this._array.push(item);
+        return this._array.push(...items);
     };
 
     this.pull = this._array.pop;
 
     this.concat = (...arg) => {
-        this._array = this._array.concat.apply(this._array, arg).slice(-this._len);
+        this._array = this._array.concat(...arg).slice(-this._len);
+        return this;
+    };
+
+    this.leftConcat = (...arg) => {
+        this._array = arg[0]
+            .concat(arg[0], ...arg.slice(1).push(this._array))
+            .slice(-this._len);
         return this;
     };
 
@@ -27,12 +35,14 @@ const fixList = function(len = 0) {
     this.forEach = this._array.forEach;
     this.pop = this._array.pop;
     this.shift = this._array.shift;
-    this.unshift = (item) => {
-        if (this._array.length < this._len) return this._array.unshift(item);
+    this.unshift = (...items) => {
+        const length = this._array.length + items.length;
 
-        this._array.pop();
+        if (length <= this._len) return this._array.unshift(...items);
 
-        return this._array.unshift(item);
+        for(let i = 0; i < length - this._len; i++) this._array.pop();
+
+        return this._array.unshift(...items);
     };
     this.get = (i) => this._array[i];
     this.set = (i, item) => {
