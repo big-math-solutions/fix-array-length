@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/big-math-solutions/fix-array-length#readme",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "mocha": "^2.5.3"
   }
 }
