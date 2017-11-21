@@ -3,12 +3,23 @@ const fixList = function(len = 0) {
     this._len = len;
     this._array = [];
     this.push = (...items) => {
+        if (items.length === 1) return this._pushOne(items[0])
+
         const length = this._array.length + items.length;
         if (length <= this._len) return this._array.push(...items);
 
-        for(let i = 0; i < length - this._len; i++) this._array.shift();
+        this._array.push(...items)
+        this._array = this._array.slice(-this._len)
 
-        return this._array.push(...items);
+        return this
+    };
+
+    this._pushOne = (item) => {
+        this._array.push(item)
+
+        if (this._array.length > this._len) return this._array.shift()
+
+        return this
     };
 
     this.pull = this._array.pop;
