@@ -15,14 +15,12 @@ describe('test to list with fix length', () => {
         list.push(0);
         list.push(1);
         list.push(2);
-        console.log(list._array)        
         assert(list._array.length === 2);
         assert.deepStrictEqual(list._array, [ 1, 2 ]);
     });
 
     it('should fix the length in push recursive', () => {
         list.push(0, 1, 2, 3, 4);
-        console.log(list._array)
         assert(list._array.length === 2);
         assert.deepStrictEqual(list._array, [ 3, 4 ]);
     });
