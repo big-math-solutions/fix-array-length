@@ -1,7 +1,7 @@
 const fixList = function(len = 0) {
     const arraySymbol = Symbol('_array');
     if (!(this instanceof fixList)) return new fixList(len);
-    this.length = len;
+    this.length = () => this[arraySymbol].length;
     this._len = len;
     this[arraySymbol] = [];
     this.push = (...items) => {

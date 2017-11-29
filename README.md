@@ -15,23 +15,29 @@ list = FixArrayLength(2)
 list.push(0);
 list.push(1);
 list.push(2);
-assert(list._array.length === 2);
-assert.deepStrictEqual(list._array, [ 1, 2 ]);
+assert(list.valueOf().length === 2);
+assert.deepStrictEqual(list.valueOf(), [ 1, 2 ]);
 
  list.push(0, 1, 2, 3, 4);
-assert(list._array.length === 2);
-assert.deepStrictEqual(list._array, [ 3, 4 ]);
+assert(list.valueOf().length === 2);
+assert.deepStrictEqual(list.valueOf(), [ 3, 4 ]);
 
 list.unshift(2);
 list.unshift(4);
 list.unshift(5);
-assert(list._array.length === 2);
-assert.deepStrictEqual(list._array, [ 5, 4 ]);
+assert(list.valueOf().length === 2);
+assert.deepStrictEqual(list.valueOf(), [ 5, 4 ]);
 
 list.concat([ 1, 2, 3, 4, 4, 5, 6, 7, 8 ]);
-assert(list._array.length === 2);
-assert.deepStrictEqual(list._array, [ 7, 8 ])
+assert(list.valueOf().length === 2);
+assert.deepStrictEqual(list.valueOf(), [ 7, 8 ])
 ```
+# Properties
+
+## _len
+
+length of list
+# Methods
 # push(item[,...])
 
 remove elements from init to maintain the length of array.
@@ -48,6 +54,9 @@ concar the array to current list
 
 # from(array)
 build the list from array given
+
+# length()
+return the number of items stored in list.
 
 # set(index, item)
 
