@@ -25,6 +25,18 @@ describe('test to list with fix length', () => {
         assert.deepStrictEqual(list.valueOf(), [ 3, 4 ]);
     });
 
+    it('should return the corret with slice', () => {
+        list.push(0, 1, 2, 3, 4);
+        assert(list.valueOf().length === 2);
+        assert.deepStrictEqual(list.slice(1), [ 4 ]);
+    });
+
+    it('should return the corret with map', () => {
+        list.push(0, 1, 2, 3, 4);
+        assert(list.valueOf().length === 2);
+        assert.deepStrictEqual(list.map((item) => item * item), [ 9, 16 ]);
+    });
+
     it('should fix the length in unshift', () => {
         list.unshift(2);
         list.unshift(4);
