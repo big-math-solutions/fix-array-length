@@ -18,7 +18,7 @@ const fixList = function(len = 0) {
         return this;
     };
 
-    this.pull = this[arraySymbol].pop;
+    this.pull = this[arraySymbol].pop.bind(this[arraySymbol]);
 
     this.concat = (...arg) => {
         this[arraySymbol] = this[arraySymbol].concat(...arg).slice(-this._len);
@@ -37,11 +37,11 @@ const fixList = function(len = 0) {
         this[arraySymbol] = array.slice(0, len);
         return this;
     };
-    this.map = this[arraySymbol].map;
-    this.filter = this[arraySymbol].filter;
-    this.forEach = this[arraySymbol].forEach;
-    this.pop = this[arraySymbol].pop;
-    this.shift = this[arraySymbol].shift;
+    this.map = this[arraySymbol].map.bind(this[arraySymbol]);
+    this.filter = this[arraySymbol].filter.bind(this[arraySymbol]);
+    this.forEach = this[arraySymbol].forEach.bind(this[arraySymbol]);
+    this.pop = this[arraySymbol].pop.bind(this[arraySymbol]);
+    this.shift = this[arraySymbol].shift.bind(this[arraySymbol]);
     this.unshift = (...items) => {
         const length = this[arraySymbol].length + items.length;
 
@@ -57,17 +57,17 @@ const fixList = function(len = 0) {
         return this;
     };
     this.getList = () => this[arraySymbol].valueOf();
-    this.slice = this[arraySymbol].slice;
-    this.toString = this[arraySymbol].toString;
-    this.sort = this[arraySymbol].sort;
-    this.join = this[arraySymbol].join;
-    this.find = this[arraySymbol].find;
-    this.findIndex = this[arraySymbol].findIndex;
-    this.indexOf = this[arraySymbol].indexOf;
-    this.lastIndexOf = this[arraySymbol].lastIndexOf;
-    this.reduce = this[arraySymbol].reduce;
-    this.reduceRight = this[arraySymbol].reduceRight;
-    this.reverse = this[arraySymbol].reverse;
+    this.slice = this[arraySymbol].slice.bind(this[arraySymbol]);
+    this.toString = this[arraySymbol].toString.bind(this[arraySymbol]);
+    this.sort = this[arraySymbol].sort.bind(this[arraySymbol]);
+    this.join = this[arraySymbol].join.bind(this[arraySymbol]);
+    this.find = this[arraySymbol].find.bind(this[arraySymbol]);
+    this.findIndex = this[arraySymbol].findIndex.bind(this[arraySymbol]);
+    this.indexOf = this[arraySymbol].indexOf.bind(this[arraySymbol]);
+    this.lastIndexOf = this[arraySymbol].lastIndexOf.bind(this[arraySymbol]);
+    this.reduce = this[arraySymbol].reduce.bind(this[arraySymbol]);
+    this.reduceRight = this[arraySymbol].reduceRight.bind(this[arraySymbol]);
+    this.reverse = this[arraySymbol].reverse.bind(this[arraySymbol]);
     this.valueOf = () => this[arraySymbol].valueOf();
 };
 
