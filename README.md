@@ -1,6 +1,6 @@
 # fix-array-length
 list or array with fix length, the loop is iterated to maintain the length of array.
-node > 6 is required.
+node > 6 is required. Not dependencies.
 # install 
 
 ```bash
@@ -38,69 +38,70 @@ assert.deepStrictEqual(list.valueOf(), [ 7, 8 ])
 
 length of list
 # Methods
-# push(item[,...])
+## push(item[,...])
 
 remove elements from init to maintain the length of array.
 
-# unshift(item)
+## unshift(item)
 
 remove elements from end to maintain the length of array.
 
-# pull()
+## pull()
 alias to pop
 
-# concat(array1[,array2, array3...])
+## concat(array1[,array2, array3...])
 concar the array to current list
 
-# from(array)
+## from(array)
 build the list from array given
 
-# length()
+## length()
 return the number of items stored in list.
 
-# set(index, item)
+## set(index, item)
 
 set the value fo list in index with item given
 
-# getList
+## getList()
 
 return the native array
-# get(index)
+## get(index)
 
 get the item in index given
 
-# map(cb)
-# filter(cb)
+## map(cb)
 alias to native one
-# forEach(cb)
+## filter(cb)
 alias to native one
-# pop()
+## forEach(cb)
+alias to native one
+## pop()
 alias to native one 
-# shift()
+## shift()
 alias to native one
-# slice(number, number)
+## slice(number, number)
 alias to native one
-# toString()
+## toString()
 alias to native one
-# sort(cb)
+## sort(cb)
 alias to native one
-# join(string)
+## join(string)
 alias to native one
-# find(cb)
+## find(cb)
 alias to native one
-# findIndex(cb)
+## findIndex(cb)
 alias to native one
-# indexOf(object)
+## indexOf(object)
 alias to native one
-# lastIndexOf(object)
+## lastIndexOf(object)
 alias to native one
-# reduce(cb, object)
+## reduce(cb, object)
 alias to native one
-# reduceRight(cb, object)
+## reduceRight(cb, object)
 alias to native one
-# reverse()
+## reverse()
 alias to native one
-# valueOf()
+## valueOf()
 alias to native one
 
 
